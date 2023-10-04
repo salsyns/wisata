@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lokasi</title>
+</head>
+<body>
+    <header>
+        <h1>Nama Objek Wisata:</h1>
+    </header>
+    <section>
+        <h2>Bali - Pulau Dewata</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=evwVgfur7YsWz5Zx7" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </section>
+    
+          <h2>Foto - Foto Dari Pulau Dewata</h2>
+  
+    <style>
+        .slideshow-container {
+            max-width: 600px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Tombol untuk mengganti slide */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Ganti warna latar belakang saat menghover tombol */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Tombol kiri */
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* Tombol kanan */
+        .next {
+            right: 0;
+            border-radius: 0 3px 3px 0;
+        }
+    </style>
+    
+    <div class="slideshow-container">
+        <!-- Gambar-gambar slide -->
+        <div class="mySlides">
+            <img src="pd1.jpg" alt="Gambar 1">
+        </div>
+        <div class="mySlides">
+            <img src="pd2.jpg" alt="Gambar 2">
+        </div>
+        <div class="mySlides">
+            <img src="pd3.jpg" alt="Gambar 3">
+        </div>
+
+        <!-- Tombol slide -->
+        <a class="prev" onclick="gantiSlide(-1)">Sebelumnya</a>
+        <a class="next" onclick="gantiSlide(1)">Selanjutnya</a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        tampilkanSlide(slideIndex);
+
+        function gantiSlide(n) {
+            tampilkanSlide(slideIndex += n);
+        }
+
+        function tampilkanSlide(n) {
+            let slides = document.getElementsByClassName("mySlides");
+            if (n >= slides.length) {
+                slideIndex = 0;
+            }
+            if (n < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        setInterval(function() {
+            gantiSlide(1);
+        }, 4000); // Mengganti slide setiap 3 detik
+    </script>
+    
+</body>
+</html>
